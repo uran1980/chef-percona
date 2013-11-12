@@ -144,6 +144,8 @@ default["percona"]["server"]["open_files_limit"]                = 16384
 default["percona"]["server"]["hostname"]                        = "localhost"
 default["percona"]["server"]["basedir"]                         = "/usr"
 default["percona"]["server"]["port"]                            = 3306
+default["percona"]["server"]["character_set"]                   = "utf8"
+default["percona"]["server"]["collation"]                       = "utf8_unicode_ci"
 default["percona"]["server"]["language"]                        = "/usr/share/mysql/english"
 default["percona"]["server"]["skip_external_locking"]           = true
 default["percona"]["server"]["net_read_timeout"]                = 120
@@ -361,6 +363,8 @@ Many thanks go to the following [contributors](https://github.com/phlipper/chef-
     * add sections to `.my.cnf` for `mysqladmin` and `mysqldump`
 * **[@AndreyChernyh](https://github.com/AndreyChernyh)**
     * use resources helper to support newer chef versions
+* **[@avit](https://github.com/avit)**
+    * add default utf8 character set option
 
 
 ## License
@@ -380,3 +384,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/phlipper/chef-percona/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
