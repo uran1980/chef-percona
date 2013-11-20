@@ -4,8 +4,14 @@ include_recipe "percona::package_repo"
 
 case node["platform_family"]
 when "debian"
-  package "xtrabackup" do
-    options "--force-yes"
+  if node['platform'] == "ubuntu" && node['platform_version'].to_f < 13.04
+    package "xtrabackup" do
+      options "--force-yes"
+    end
+  else
+    package "percona-xtrabackup" do
+      options "--force-yes"
+    end
   end
 when "rhel"
   package "percona-xtrabackup"
